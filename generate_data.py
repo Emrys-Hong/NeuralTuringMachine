@@ -11,7 +11,7 @@ class CopyTaskData:
     def generate_batches(self, num_batches, batch_size, bits_per_vector=8, curriculum_point=20, max_seq_len=20,
         curriculum='uniform', pad_to_max_seq_len=False):
         batches = []
-        for i in range(num_batches):
+        for i in range(int(num_batches)):
             if curriculum == 'deterministic_uniform':
                 seq_len = 1 + (i % max_seq_len)
             elif curriculum == 'uniform':
